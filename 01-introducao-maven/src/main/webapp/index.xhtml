@@ -3,8 +3,7 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 	<h:head>
 		<meta charset="utf-8" />
@@ -15,16 +14,6 @@
 		<h4>Gerenciamento de Dependências com Maven</h4>
 	
 		<h:form>
-			<h5>Nome:</h5>
-    		<p:inputText value="#{indexView.nome}" />
-    		<br/><br/>
-    		
-    		<p:commandButton value="Enviar"
-    			update="@form" />
-    		
-    		<br/><br/>
-    		<h:outputText value="#{indexView.mensagem}" />		
-    					
 			<p>Acesso em: 
 				<h:outputText value="#{indexView.dthrAtual}">
 					<f:convertDateTime type="localDateTime" 
