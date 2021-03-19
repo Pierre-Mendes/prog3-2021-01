@@ -11,13 +11,22 @@ public class IndexView {
 	
 	private LocalDateTime dthrAtual = LocalDateTime.now();
 	
+	private String nome;
+	
 	public LocalDateTime getDthrAtual() {
-		System.out.println(dthrAtual);
 		return dthrAtual;
 	}
 
 	public void setDthrAtual(LocalDateTime dthrAtual) {
 		this.dthrAtual = dthrAtual;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 }
