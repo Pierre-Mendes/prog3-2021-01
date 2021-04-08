@@ -22,11 +22,9 @@
 			<p:commandButton value="Enviar"
 				update="@form" />
 				
-			<p>Seja bem vindo(a)
-				<h:panelGroup rendered="#{indexView.nome != null}">
-					#{indexView.nome}
-				</h:panelGroup>
-			!</p>
+			<h:panelGroup rendered="#{indexView.nome != null}">
+				<p>#{indexView.mensagem}</p>
+			</h:panelGroup>
 			
 			<p>Acesso em: 
 				<h:outputText value="#{indexView.dthrAtual}">

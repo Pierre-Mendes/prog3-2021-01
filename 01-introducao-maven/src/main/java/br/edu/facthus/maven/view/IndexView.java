@@ -13,6 +13,22 @@ public class IndexView {
 	
 	private String nome;
 	
+	// Retorna a mensagem personalizada
+	// Bom dia: até 12 horas
+	// Boa tarde: de 12 às 18 horas
+	// Boa noite: após as 18 horas 
+	public String getMensagem() {
+		String mensagem = null;
+		if (dthrAtual.getHour() < 12)
+			mensagem = "Bom dia";
+		else if (dthrAtual.getHour() < 18)
+			mensagem = "Boa tarde";
+		else
+			mensagem = "Boa noite";
+			
+		return String.format("%s %s! Seja bem vindo(a)!", mensagem, nome);
+	}
+	
 	public LocalDateTime getDthrAtual() {
 		return dthrAtual;
 	}
