@@ -7,30 +7,29 @@
 
 	<h:head>
 		<meta charset="utf-8" />
-		<title>Facelets e Backing Beans</title>
+		<title>Exercício 01</title>
 	</h:head>
 
 	<h:body>
-		<h3>Facelets e Backing Beans</h3>
+		<h3>Exercício 01</h3>
 		
 		<h:form>
-			Mensagem: <h:inputText value="#{indexView.mensagem}" />
+			Número 1: <h:inputText value="#{exercicio01View.n1}" />
 			<br/><br/>
 			
-			<h:commandButton value="Enviar" 
-				action="#{indexView.atualizaMensagem}">
+			Número 2: <h:inputText value="#{exercicio01View.n2}" />
+			<br/><br/>
+			
+			<h:commandButton value="Calcular" 
+				action="#{exercicio01View.calculaSoma}">
 				
 				<f:ajax execute="@form" render="saida" />
 			</h:commandButton>
 		
 			<p>
 				<h:outputText id="saida" 
-					value="#{indexView.texto}"  />
+					value="#{exercicio01View.saida}"  />
 			</p>
 		</h:form>
-		
-		<h4>Exercícios</h4>
-		
-		<h:link outcome="/exercicio01" value="Exercício 01" />
 	</h:body>
 </html>
