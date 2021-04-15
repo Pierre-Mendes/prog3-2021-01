@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt_BR" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+	<h:head>
+		<meta charset="utf-8" />
+		<title>Exercício 02</title>
+	</h:head>
+
+	<h:body>
+		<h3>Exercício 02</h3>
+		
+		<h:form>
+			Número 1: <h:inputText value="#{exercicio02View.n1}" />
+			<br/><br/>
+			
+			Número 2: <h:inputText value="#{exercicio02View.n2}" />
+			<br/><br/>
+			
+			<h:panelGrid columns="3">
+				<h:commandButton value="Soma" 
+					action="#{exercicio02View.calculaSoma}">
+					
+					<f:ajax execute="@form" render="saida" />
+				</h:commandButton>
+				
+				<h:commandButton value="Subtração" 
+					action="#{exercicio02View.calculaSubtracao}">
+					
+					<f:ajax execute="@form" render="saida" />
+				</h:commandButton>
+
+				<h:commandButton value="Multiplicação" 
+					action="#{exercicio02View.calculaMultiplicacao}">
+					
+					<f:ajax execute="@form" render="saida" />
+				</h:commandButton>
+
+				<h:commandButton value="Divisão" 
+					action="#{exercicio02View.calculaDivisao}">
+					
+					<f:ajax execute="@form" render="saida" />
+				</h:commandButton>
+
+				<h:commandButton value="Resto" 
+					action="#{exercicio02View.calculaResto}">
+					
+					<f:ajax execute="@form" render="saida" />
+				</h:commandButton>
+			</h:panelGrid>
+		
+			<p>
+				<h:outputText id="saida" 
+					value="#{exercicio02View.saida}"  />
+			</p>
+		</h:form>
+	</h:body>
+</html>
