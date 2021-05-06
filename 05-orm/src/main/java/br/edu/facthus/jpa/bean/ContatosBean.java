@@ -23,6 +23,10 @@ public class ContatosBean {
 		entityManager.persist(contato);
 	}
 	
+	public void atualiza(Contato contato) {
+		entityManager.merge(contato);
+	}
+	
 	public List<Contato> lista() {
 		return entityManager
 				.createQuery("SELECT c FROM Contato c", Contato.class)

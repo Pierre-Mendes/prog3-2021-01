@@ -25,12 +25,24 @@
 			<h:inputText id="telefone" value="#{indexView.contato.telefone}" />
 		</h:panelGrid>
 
-		<h:commandButton value="Cadastrar" action="#{indexView.cadastra}">
-			<f:ajax execute="@form" render="messages" />
+		<h:commandButton value="Salvar" 
+			action="#{indexView.salva}">
+			<f:ajax execute="@form" 
+				render="messages @form" />
 		</h:commandButton>
 
-		<h:commandButton value="Listar" action="#{indexView.lista}" style="margin-left:20px">
-			<f:ajax execute="@form" render="messages tblContatos" />
+		<h:commandButton value="Listar" 
+			action="#{indexView.lista}" 
+			style="margin-left:20px">
+			<f:ajax execute="@form" 
+				render="messages tblContatos" />
+		</h:commandButton>
+		
+		<h:commandButton value="Limpar" 
+			action="#{indexView.limpa}" 
+			style="margin-left:20px">
+			<f:ajax execute="@form" 
+				render="@form" />
 		</h:commandButton>
 		<br />
 		<br />

@@ -26,11 +26,17 @@ public class IndexView implements Serializable {
 	
 	private List<Contato> listaContatos = new ArrayList<Contato>();
 	
-	public void cadastra() {
-		contatosBean.cadastra(contato);
-		contato = new Contato();
-		FacesContext.getCurrentInstance().addMessage(null, 
+	public void salva() {
+		if (contato.getId() == null) {
+			contatosBean.cadastra(contato);
+			contato = new Contato();
+			FacesContext.getCurrentInstance().addMessage(null, 
 				new FacesMessage("Contato cadastrado com sucesso!"));
+		} else {
+			contatosBean.atualiza(contato);
+			FacesContext.getCurrentInstance().addMessage(null, 
+				new FacesMessage("Contato atualizado com sucesso!"));
+		}
 	}
 	
 	public void lista() {
@@ -42,6 +48,11 @@ public class IndexView implements Serializable {
 	
 	public void edita(Contato contato) {
 		this.contato = contato;
+	}
+	
+	public void limpa() {
+		contato = new Contato();
+		listaContatos = new ArrayList<Contato>();
 	}
 
 	public ContatosBean getContatosBean() {
