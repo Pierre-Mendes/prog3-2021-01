@@ -27,6 +27,14 @@ public class ContatosBean {
 		entityManager.merge(contato);
 	}
 	
+	public void remove(Contato contato) {
+		Contato c = entityManager
+				.find(Contato.class, contato.getId());
+		
+		if (c != null)
+			entityManager.remove(c);
+	}
+	
 	public List<Contato> lista() {
 		return entityManager
 				.createQuery("SELECT c FROM Contato c", Contato.class)

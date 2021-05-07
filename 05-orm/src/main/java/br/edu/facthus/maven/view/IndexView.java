@@ -54,6 +54,13 @@ public class IndexView implements Serializable {
 		contato = new Contato();
 		listaContatos = new ArrayList<Contato>();
 	}
+	
+	public void remove(Contato contato) {
+		contatosBean.remove(contato);
+		listaContatos = contatosBean.lista();
+		FacesContext.getCurrentInstance().addMessage(null, 
+				new FacesMessage("Contato removido com sucesso!"));
+	}
 
 	public ContatosBean getContatosBean() {
 		return contatosBean;

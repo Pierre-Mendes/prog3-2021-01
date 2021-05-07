@@ -79,6 +79,14 @@
 					<f:ajax execute="@form" 
 						render="@form" />
 				</h:commandButton>
+				
+				<h:commandButton value="Remover" 
+					action="#{indexView.remove(contato)}"
+					style="margin-left: 10px">
+			
+					<f:ajax execute="@form" 
+						render="@form messages" />
+				</h:commandButton>
    			</h:column>
 		</h:dataTable>
 	</h:form>
