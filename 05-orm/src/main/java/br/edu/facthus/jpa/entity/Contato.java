@@ -7,10 +7,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "contatos")
+@NamedQueries({
+	@NamedQuery(name = "Contato.findAll",
+			query = "SELECT c "
+					+ "FROM Contato c"),
+	@NamedQuery(name = "Contato.findByNome",
+			query = "SELECT c "
+					+ "FROM Contato c "
+					+ "WHERE LOWER(c.nome) LIKE :nome")
+})
 public class Contato implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

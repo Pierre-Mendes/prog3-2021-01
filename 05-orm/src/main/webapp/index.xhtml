@@ -14,6 +14,8 @@
 	<h:messages id="messages" />
 
 	<h:form>
+		<h4>Cadastro</h4>
+		
 		<h:panelGrid columns="2">
 			<h:outputLabel for="nome" value="Nome:" /> 
 			<h:inputText id="nome" value="#{indexView.contato.nome}" />
@@ -47,6 +49,21 @@
 		<br />
 		<br />
 
+		<hr />
+
+		<h4>Pesquisa</h4>
+		
+		<h:panelGrid columns="2">
+			<h:outputLabel for="nomePesquisa" value="Nome:" /> 
+			<h:inputText id="nomePesquisa" value="#{indexView.nomePesquisa}" />
+		</h:panelGrid>
+
+		<h:commandButton value="Pesquisar" 
+			action="#{indexView.pesquisa}">
+			<f:ajax execute="@form" 
+				render="messages @form" />
+		</h:commandButton>
+		
 		<h:dataTable id="tblContatos" 
 			value="#{indexView.listaContatos}" 
 			var="contato">

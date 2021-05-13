@@ -37,8 +37,15 @@ public class ContatosBean {
 	
 	public List<Contato> lista() {
 		return entityManager
-				.createQuery("SELECT c FROM Contato c", Contato.class)
+				.createNamedQuery("Contato.findAll", Contato.class)
 				.getResultList();
 	}
-
+	
+	public List<Contato> buscaPorNome(String nome) {
+		return entityManager
+				.createNamedQuery("Contato.findByNome", Contato.class)
+				.setParameter("nome", String.format("%%%s%%", nome.toLowerCase()))
+				.getResultList();
+	}
+	
 }
